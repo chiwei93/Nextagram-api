@@ -29,7 +29,7 @@ const upload = multer({
     s3: s3,
     bucket: 'pc-food-bucket',
     key: function (req, file, cb) {
-      cb(null, `${req.userId}-${Date.now().toString()}`);
+      cb(null, `${req.user.id}-${Date.now().toString()}`);
     },
   }),
 });
